@@ -1,0 +1,109 @@
+version: 0.1.1
+default:
+  # Default profile created for data IO access.
+  # Add your credentials for the source you use, and delete the rest.
+  # AWS
+  AWS_ACCESS_KEY_ID: "{{ env_var('AWS_ACCESS_KEY_ID') }}"
+  AWS_SECRET_ACCESS_KEY: "{{ env_var('AWS_SECRET_ACCESS_KEY') }}"
+  AWS_SESSION_TOKEN: session_token (Used to generate Redshift credentials)
+  AWS_REGION: region
+  # Azure
+  AZURE_CLIENT_ID: "{{ env_var('AZURE_CLIENT_ID') }}"
+  AZURE_CLIENT_SECRET: "{{ env_var('AZURE_CLIENT_SECRET') }}"
+  AZURE_STORAGE_ACCOUNT_NAME: "{{ env_var('AZURE_STORAGE_ACCOUNT_NAME') }}"
+  AZURE_TENANT_ID: "{{ env_var('AZURE_TENANT_ID') }}"
+  # Clickhouse
+  CLICKHOUSE_DATABASE: default
+  CLICKHOUSE_HOST: host.docker.internal
+  CLICKHOUSE_INTERFACE: http
+  CLICKHOUSE_PASSWORD: null
+  CLICKHOUSE_PORT: 8123
+  CLICKHOUSE_USERNAME: null
+  # Druid
+  DRUID_HOST: hostname
+  DRUID_PASSWORD: password
+  DRUID_PATH: /druid/v2/sql/
+  DRUID_PORT: 8082
+  DRUID_SCHEME: http
+  DRUID_USER: user
+  # Google
+  GOOGLE_SERVICE_ACC_KEY:
+    type: service_account
+    project_id: dezoomcamptaxi
+    private_key_id: "cd8fe72ade4fea148a1e1ca0ce5488bf742f0c6a"
+    private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDXP5ZW/j/SGr17\n++DFWzglS7yuneZ5JMPuGMDrmhPfLbP2OVrjAMiv/Z6dTyzsB0Occh2uDK3R7pRL\nGiTevTxpgKFZx89vfXol81nMgMbmeSo8x5EJtxGXHI/RHvLxHkZ90OTJIBsoTwQK\nJ8Ylzgpgb568EXhIhFzceNiNLADmAgQCgKBnpyqQJY+LRcw4+HLnnk9u77Te72ey\ncK9R0QBrP9mf6eNhfLAZ3YcHP+LxxIp8PDP+EcMgXxIoGi08rGmnwixKlmymJhj9\nIrnT7NUInkv/dg7rPLSsb6fk47zgcE2/pD3JjHoEFl86oHKXPtpvpfGsn5Hu23RY\nOnczb9qDAgMBAAECggEAFqPIXypghxZV7iJY4Bk58hOhwGdjnu6thwURLEFpVqo6\nyVVQsxtZgHKiH3Snn8Rx1D+H0fnhFyQgx+IeP6lSydwEMepwwzlvmBSc/Nlh/PWA\nlPepUIbHXF1eM8YtZ7a3U7Ny5O6yEeQhuM8PKdnJQJ8XkztugIjKMExWUUmavJZc\neJzjkow05ZQSuL4UB7K5C1ZB7yowMOFq00nd5jxQ3lCrh0kyEcbB6MbMcP4MvwIv\ne7pN6A4BkpSrTjTjwNZeLZZOu2230180VIt/ve5IRKkgB0L1GyUmEXHhkZcnGcqF\niLs1ZfXlZYOAjccHGLtdDzPavVxS1xK7MD1Zz2IaKQKBgQD+9Nol2xBjeHbutBUH\nP+GvYtxlqoUQhXDhjzoeu2x/y49L2Xso50NMMkOySOFw0exl/6+7NznZsZR61tjw\nzlilGl3Xz02QD1UuLlOjx9dlfuS7CmKxsZR7pPzk+i4i/9s1JY/Cf6OFx13E+iLs\niZz5RqcYC9zLPACi3NMswPtEaQKBgQDYISDZNe9kPqW/TpXAIoBDsu8QK8rfXBPX\ny//PVCYINemRGcMsev+FoZGtYobDS0SDHjHOYrWo093QeLgl4S9gwE2CU34rnBhD\nvqES1lzFVeoxFUAQn7KDt39szoT5TliZJX585EnyItO/gn6LHoHIAkg4BOhtR6JQ\nrOUYPv9aCwKBgQCyZV+zN1p7T5Jgqk9AeFmRYCp5VNyw175Jhe+UC2766NOGrlF4\nKIG1ckJeIJLmX2z7XfJ3nEf1ZEVRwr2fmbL7K7zYQeyyzZe7rZzGsBGuqiCgI781\nON19us9d5RSdVsvqnzK9VJR2Ci85ohEH066r2d0XfU1sQ7rqOnvlB8+JaQKBgQDC\nFIWt6CwPxd4LO+NnxNOPd4gL6ndkOggrmaoeoP8CEn+qaAsGz3DTrDHoE/jWOKnO\nYHfzUFq2v4KJqU4b3eowpJ81sAo12RdFBlMYWly2bB9Acke0ZePlOgt4Rr/MLFmN\nNMkwF8R7ZmDlsaY3AW8jj0EQ5P9e2pvcfFXBfxjI3wKBgQChMdxU/047qEPROxyz\nvHltMcVYTyh2MLaTzSUYC0Noss8U3xtA++QpjS5IO+/QMKnExOpCpBu3FIJ/w1YI\n7EiWVd7l3zPXubC00YAoLkkgq7YCIerWhAFcmvCWWQ0o7iyNzG4Wggxxgvdla/I/\nyvDsX8UaMOHUGylYRnvhP7CusA==\n-----END PRIVATE KEY-----\n"
+    client_email: nytaxi-prefect-admin@dezoomcamptaxi.iam.gserviceaccount.com
+    auth_uri: "https://accounts.google.com/o/oauth2/auth"
+    token_uri: "https://oauth2.googleapis.com/token"
+    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+    client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/nytaxi-prefect-admin%40dezoomcamptaxi.iam.gserviceaccount.com"
+  GOOGLE_SERVICE_ACC_KEY_FILEPATH: "/path/to/your/service/account/key.json"
+  GOOGLE_LOCATION: US # Optional
+  # MongoDB
+  # Specify either the connection string or the (host, password, user, port) to connect to MongoDB.
+  MONGODB_CONNECTION_STRING: "mongodb://{username}:{password}@{host}:{port}/"
+  MONGODB_HOST: host
+  MONGODB_PORT: 27017
+  MONGODB_USER: user
+  MONGODB_PASSWORD: password
+  MONGODB_DATABASE: database
+  MONGODB_COLLECTION: collection
+  # MSSQL
+  MSSQL_DATABASE: database
+  MSSQL_SCHEMA: schema
+  MSSQL_DRIVER: "ODBC Driver 18 for SQL Server"
+  MSSQL_HOST: host
+  MSSQL_PASSWORD: password
+  MSSQL_PORT: 1433
+  MSSQL_USER: SA
+  # MySQL
+  MYSQL_DATABASE: database
+  MYSQL_HOST: host
+  MYSQL_PASSWORD: password
+  MYSQL_PORT: 3306
+  MYSQL_USER: root
+  # PostgresSQL
+  POSTGRES_CONNECT_TIMEOUT: 10
+  POSTGRES_DBNAME: postgres
+  POSTGRES_SCHEMA: public # Optional
+  POSTGRES_USER: username
+  POSTGRES_PASSWORD: password
+  POSTGRES_HOST: hostname
+  POSTGRES_PORT: 5432
+  # Redshift
+  REDSHIFT_SCHEMA: public # Optional
+  REDSHIFT_DBNAME: redshift_db_name
+  REDSHIFT_HOST: redshift_cluster_id.identifier.region.redshift.amazonaws.com
+  REDSHIFT_PORT: 5439
+  REDSHIFT_TEMP_CRED_USER: temp_username
+  REDSHIFT_TEMP_CRED_PASSWORD: temp_password
+  REDSHIFT_DBUSER: redshift_db_user
+  REDSHIFT_CLUSTER_ID: redshift_cluster_id
+  REDSHIFT_IAM_PROFILE: default
+  # Snowflake
+  SNOWFLAKE_USER: username
+  SNOWFLAKE_PASSWORD: password
+  SNOWFLAKE_ACCOUNT: account_id.region
+  SNOWFLAKE_DEFAULT_WH: null                  # Optional default warehouse
+  SNOWFLAKE_DEFAULT_DB: null                  # Optional default database
+  SNOWFLAKE_DEFAULT_SCHEMA: null              # Optional default schema
+  SNOWFLAKE_PRIVATE_KEY_PASSPHRASE: null      # Optional private key passphrase
+  SNOWFLAKE_PRIVATE_KEY_PATH: null            # Optional private key path
+  SNOWFLAKE_ROLE: null                        # Optional role name
+  SNOWFLAKE_TIMEOUT: null                     # Optional timeout in seconds
+  # Trino
+  trino:
+    catalog: postgresql                       # Change this to the catalog of your choice
+    host: 127.0.0.1
+    http_headers:
+      X-Something: 'mage=power'
+    http_scheme: http
+    password: mage1337                        # Optional
+    port: 8080
+    schema: core_data
+    session_properties:                       # Optional
+      acc01.optimize_locality_enabled: false
+      optimize_hash_generation: true
+    source: trino-cli                         # Optional
+    user: admin
+    verify: /path/to/your/ca.crt              # Optional
